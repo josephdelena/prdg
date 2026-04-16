@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/lpwaktu", "destination": "/lpwaktu/index.html" },
+    { "source": "/lpfomo", "destination": "/lpfomo/index.html" },
+    { "source": "/lpvalue", "destination": "/lpvalue/index.html" }
+  ]
+}

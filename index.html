@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRDG.ONLINE — Solusi Produk Digital</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family:'Segoe UI',system-ui,Arial,sans-serif;
+  background:#0d0d0d;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  overflow:hidden;
+}
+.bg{
+  position:fixed;inset:0;
+  background:radial-gradient(ellipse at 30% 50%, rgba(124,58,237,.18) 0%, transparent 60%),
+             radial-gradient(ellipse at 75% 40%, rgba(232,97,26,.12) 0%, transparent 55%);
+  z-index:0;
+}
+.wrap{
+  position:relative;z-index:1;
+  text-align:center;
+  padding:40px 24px;
+}
+.badge{
+  display:inline-block;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  color:rgba(255,255,255,.5);
+  font-size:11px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;padding:6px 16px;border-radius:20px;
+  margin-bottom:32px;
+}
+h1{
+  font-size:clamp(36px,10vw,80px);
+  font-weight:900;
+  letter-spacing:-1px;
+  background:linear-gradient(135deg,#fff 30%,rgba(255,255,255,.4));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  line-height:1;
+  margin-bottom:24px;
+}
+h1 span{
+  background:linear-gradient(135deg,#7c3aed,#e8611a);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+p{
+  font-size:clamp(15px,2.5vw,19px);
+  color:rgba(255,255,255,.45);
+  max-width:420px;
+  margin:0 auto;
+  line-height:1.6;
+}
+.dot{
+  display:inline-block;width:4px;height:4px;
+  background:#7c3aed;border-radius:50%;
+  margin:36px auto 0;
+  box-shadow:0 0 12px #7c3aed;
+}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="wrap">
+  <div class="badge">Produk Digital Indonesia</div>
+  <h1>PRDG<span>.</span>ONLINE</h1>
+  <p>Solusi Produk Digital untuk Kemajuan Usaha Kamu</p>
+  <div class="dot"></div>
+</div>
+</body>
+</html>

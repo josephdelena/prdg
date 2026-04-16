@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Konten Kilat — Rp 79rb vs Bayar Copywriter Jutaan</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a1a2e;background:#fff;line-height:1.65;font-size:15px}
+a{text-decoration:none;color:inherit}
+.container{max-width:700px;margin:0 auto;padding:0 20px}
+.timer-bar{background:#7c3aed;color:#fff;text-align:center;padding:11px 16px;font-size:13px;font-weight:600;position:sticky;top:0;z-index:100}
+.timer-bar .t{font-weight:800;font-variant-numeric:tabular-nums;background:rgba(255,255,255,.2);padding:2px 8px;border-radius:6px}
+.hero{background:linear-gradient(160deg,#f5f3ff 0%,#fff 60%);padding:52px 20px 44px;border-bottom:3px solid #7c3aed}
+.eyebrow{display:inline-block;background:#7c3aed;color:#fff;font-size:11px;font-weight:700;letter-spacing:1.2px;padding:5px 14px;border-radius:20px;margin-bottom:18px;text-transform:uppercase}
+.hero h1{font-size:clamp(26px,5.5vw,42px);font-weight:900;line-height:1.18;margin-bottom:18px}
+.hero h1 em{color:#7c3aed;font-style:normal}
+.vs-hero{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;max-width:500px;margin-bottom:28px;background:#f9f9f9;border-radius:14px;padding:20px;border:1px solid #e8e8e8}
+.vs-left{text-align:center}
+.vs-left .price{font-size:28px;font-weight:900;color:#dc2626;line-height:1}
+.vs-left .per{font-size:11px;color:#888;margin-top:2px}
+.vs-left .sub{font-size:10px;color:#dc2626;font-weight:600;margin-top:4px}
+.vs-mid{font-size:22px;font-weight:900;color:#ccc;text-align:center}
+.vs-right{text-align:center}
+.vs-right .price{font-size:28px;font-weight:900;color:#16a34a;line-height:1}
+.vs-right .per{font-size:11px;color:#888;margin-top:2px}
+.vs-right .sub{font-size:10px;color:#16a34a;font-weight:600;margin-top:4px}
+.hero-sub{font-size:17px;color:#444;margin-bottom:24px;max-width:560px}
+.price-wrap{margin-bottom:18px}
+.price-wrap .old{font-size:15px;color:#aaa;text-decoration:line-through}
+.price-wrap .new{font-size:42px;font-weight:900;color:#e8611a;line-height:1}
+.save-badge{display:inline-block;background:#16a34a;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;margin-left:8px;vertical-align:middle}
+.btn{display:block;background:#7c3aed;color:#fff;font-size:18px;font-weight:800;padding:20px;border-radius:10px;text-align:center;max-width:480px;box-shadow:0 6px 24px rgba(124,58,237,.3)}
+.btn small{display:block;font-size:11px;font-weight:400;opacity:.85;margin-top:4px}
+.trust-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px;font-size:12px;color:#888}
+section{padding:52px 20px}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#7c3aed;margin-bottom:8px}
+h2{font-size:clamp(22px,4vw,30px);font-weight:900;line-height:1.25;margin-bottom:8px}
+.sec-sub{font-size:15px;color:#555;margin-bottom:28px}
+.ul-divider{height:3px;background:linear-gradient(90deg,#7c3aed,#a78bfa);border-radius:2px;margin:8px 0 28px}
+/* COMPARE TABLE */
+.comp-table{width:100%;border-collapse:collapse}
+.comp-table th{padding:12px 10px;font-size:12px;font-weight:700;text-align:center;text-transform:uppercase;letter-spacing:.5px}
+.comp-table th:first-child{text-align:left}
+.comp-table th.bad{background:#fee2e2;color:#dc2626}
+.comp-table th.mid{background:#fff3cd;color:#92400e}
+.comp-table th.good{background:#1a1a2e;color:#fff}
+.comp-table td{padding:11px 10px;border-bottom:1px solid #f0f0f0}
+.comp-table td:first-child{font-size:13px;color:#333;font-weight:600}
+.comp-table td.bad-val{text-align:center;color:#dc2626;font-weight:700;background:#fff5f5;font-size:13px}
+.comp-table td.mid-val{text-align:center;color:#92400e;font-weight:700;background:#fffbeb;font-size:13px}
+.comp-table td.good-val{text-align:center;color:#16a34a;font-weight:700;background:#f0fdf4;font-size:13px}
+.comp-table tr:last-child td{border-bottom:none}
+/* VALUE STACK */
+.value-item{display:flex;justify-content:space-between;align-items:flex-start;padding:16px 0;border-bottom:1px solid #f0f0f0}
+.value-item:last-child{border-bottom:none}
+.value-desc{flex:1}
+.value-desc h3{font-size:15px;font-weight:700;margin-bottom:2px}
+.value-desc p{font-size:13px;color:#888;line-height:1.4}
+.value-price{font-size:15px;font-weight:700;color:#dc2626;flex-shrink:0;margin-left:16px;margin-top:2px}
+.value-total-box{background:#fff5ee;border:2px solid #e8611a;border-radius:12px;padding:18px;margin-top:16px}
+.vt-row{display:flex;justify-content:space-between;align-items:center;font-size:15px;margin-bottom:10px}
+.vt-row.big{font-size:18px;font-weight:800;padding-top:10px;border-top:2px dashed #e8611a;margin-top:10px;margin-bottom:0}
+.vt-row .lbl{color:#444}
+.vt-row .val{font-weight:700;color:#dc2626}
+.your-price-box{background:#7c3aed;border-radius:10px;padding:16px 18px;margin-top:12px;display:flex;justify-content:space-between;align-items:center}
+.your-price-box .lbl{color:#fff;font-size:16px;font-weight:700}
+.your-price-box .val{color:#fff;font-size:30px;font-weight:900}
+/* ROI CALC */
+.roi-calc{background:#1a1a2e;border-radius:14px;padding:28px;color:#fff;margin-top:4px}
+.roi-calc h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:16px}
+.roi-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:14px}
+.roi-row:last-of-type{border-bottom:none}
+.roi-row .lbl{color:#ccc}
+.roi-row .val{font-weight:700}
+.roi-row .val.red{color:#f87171}
+.roi-row .val.green{color:#86efac}
+.roi-total{background:rgba(255,255,255,.1);border-radius:10px;padding:16px;margin-top:16px;display:flex;justify-content:space-between;align-items:center}
+.roi-total .lbl{color:#fff;font-size:15px;font-weight:700}
+.roi-total .val{color:#86efac;font-size:22px;font-weight:900}
+/* BONUS STACK */
+.bonus-item{display:flex;gap:16px;align-items:flex-start;padding:20px;background:#f9f9f9;border-radius:10px;margin-bottom:12px;border:1px solid #e8e8e8;position:relative}
+.bonus-num{min-width:44px;height:44px;border-radius:50%;background:#7c3aed;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;flex-shrink:0}
+.bonus-content h3{font-size:16px;font-weight:800;margin-bottom:4px}
+.bonus-content p{font-size:13px;color:#555;line-height:1.55}
+.bonus-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.bonus-tags span{background:#f5f3ff;color:#7c3aed;font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px}
+.value-tag{position:absolute;top:14px;right:14px;background:#1a1a2e;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px}
+/* TESTI */
+.testi-grid{display:grid;gap:14px}
+.tc{background:#f9f9f9;border-radius:10px;padding:20px;border:1px solid #e8e8e8;border-left:3px solid #7c3aed}
+.tc-top{display:flex;justify-content:space-between;margin-bottom:10px}
+.tc-stars{color:#f59e0b;font-size:14px}
+.result-pill{background:#f5f3ff;color:#7c3aed;font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px}
+.tc blockquote{font-size:14px;color:#333;line-height:1.65;font-style:italic;margin-bottom:12px}
+.tc-author{display:flex;gap:10px;align-items:center}
+.tc-avatar{width:38px;height:38px;border-radius:50%;background:#7c3aed;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0}
+.tc-name{font-size:13px;font-weight:700}
+.tc-role{font-size:12px;color:#888}
+/* GUARANTEE */
+.guar-sec{background:#1a1a2e;color:#fff}
+.guar-sec h2{color:#fff}
+.g-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:28px;margin-top:20px;display:flex;gap:20px;align-items:flex-start}
+.g-icon{font-size:52px;flex-shrink:0}
+.g-text h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:10px}
+.g-text p{font-size:14px;color:#ccc;line-height:1.7}
+.g-text b{color:#fff}
+.g-text p+p{margin-top:10px}
+/* RISK */
+.risk-list{list-style:none}
+.risk-list li{padding:14px 16px;margin-bottom:10px;background:#f9f9f9;border-radius:8px;border:1px solid #e8e8e8;font-size:14px;color:#333;display:flex;gap:10px;align-items:flex-start}
+/* FAQ */
+.faq-item{border:1px solid #e8e8e8;border-radius:8px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:16px;font-size:15px;font-weight:700;background:#f9f9f9;display:flex;justify-content:space-between}
+.faq-q::after{content:"+";font-size:20px;color:#7c3aed;font-weight:400}
+.faq-a{padding:14px 16px;font-size:14px;color:#555;line-height:1.65;border-top:1px solid #e8e8e8}
+/* CTA */
+.cta-box{background:linear-gradient(160deg,#f5f3ff,#fff);border:2px solid #7c3aed;border-radius:16px;padding:32px 24px;max-width:500px;margin:0 auto}
+.cta-box h2{font-size:24px;font-weight:900;margin-bottom:6px;text-align:center}
+.cta-sub{text-align:center;font-size:14px;color:#555;margin-bottom:24px}
+.cta-includes{list-style:none;margin-bottom:24px;border:1px solid #ede9fe;border-radius:10px;overflow:hidden}
+.cta-includes li{padding:11px 14px;font-size:14px;border-bottom:1px solid #ede9fe;display:flex;justify-content:space-between;background:#fff;align-items:center}
+.cta-includes li:last-child{border-bottom:none}
+.cta-includes li::before{content:"✅ "}
+.cta-includes .val{font-size:12px;color:#aaa;text-decoration:line-through;flex-shrink:0;margin-left:8px}
+.cta-price{text-align:center;margin-bottom:16px}
+.cta-price .old{font-size:14px;color:#aaa;text-decoration:line-through}
+.cta-price .new{font-size:44px;font-weight:900;color:#e8611a;line-height:1.1}
+.cta-price .disc{display:inline-block;background:#16a34a;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;margin-top:4px}
+.cta-timer{background:#1a1a2e;border-radius:8px;padding:12px;text-align:center;margin-bottom:16px;font-size:13px;color:#ccc}
+.cta-timer .t{color:#a78bfa;font-weight:800;font-size:16px;font-variant-numeric:tabular-nums}
+.btn-final{display:block;background:#e8611a;color:#fff;font-size:19px;font-weight:800;padding:20px;border-radius:10px;text-align:center;margin-bottom:12px;box-shadow:0 6px 24px rgba(232,97,26,.35)}
+.btn-final small{display:block;font-size:12px;font-weight:400;opacity:.85;margin-top:4px}
+.cta-footnote{text-align:center;font-size:12px;color:#888}
+footer{background:#1a1a2e;color:#666;text-align:center;padding:24px 20px;font-size:12px}
+footer a{color:#888}
+@media(max-width:500px){.vs-hero{grid-template-columns:1fr auto 1fr}}
+</style>
+</head>
+<body>
+
+<div class="timer-bar">💜 Harga spesial Rp 79.000 hanya tersedia <span class="t" id="timer">23:47:12</span> lagi — Setelah itu naik ke Rp 199.000</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Kalkulasi Nyata untuk UMKM</div>
+    <h1>Bayar Copywriter <em>Rp 500.000 Per Hari</em>, atau Pakai AI Seharga Rp 79.000 Selamanya?</h1>
+    <div class="vs-hero">
+      <div class="vs-left">
+        <div class="price">Rp 15 juta</div>
+        <div class="per">per bulan</div>
+        <div class="sub">Copywriter + Desainer lepas</div>
+      </div>
+      <div class="vs-mid">VS</div>
+      <div class="vs-right">
+        <div class="price">Rp 79rb</div>
+        <div class="per">sekali bayar</div>
+        <div class="sub">✓ Pakai selamanya</div>
+      </div>
+    </div>
+    <p class="hero-sub">Dengan 1.000+ prompt AI + 105 template Canva + panduan lengkap — kamu bisa buat semua konten bisnis sendiri, tanpa keahlian khusus, tanpa biaya bulanan.</p>
+    <div class="price-wrap">
+      <div class="old">Harga Normal: Rp 199.000</div>
+      <div><span class="new">Rp 79.000</span><span class="save-badge">Hemat 60%</span></div>
+    </div>
+    <a href="#order" class="btn">Ambil Sekarang — Harga Terbaik →<small>Satu kali bayar · Akses selamanya · Garansi 7 hari</small></a>
+    <div class="trust-row"><span>🔒 Pembayaran Aman</span><span>⚡ Akses Instan</span><span>🇮🇩 Bahasa Indonesia</span><span>♾️ Pakai Selamanya</span></div>
+  </div>
+</section>
+
+<!-- COMPARE TABLE -->
+<section style="background:#f9f9f9">
+  <div class="container">
+    <div class="sec-label">Perbandingan Jujur</div>
+    <h2>Kamu Perlu Konten — Ini Semua Pilihannya</h2>
+    <div class="ul-divider"></div>
+    <div style="overflow-x:auto">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th style="background:#f9f9f9;color:#333;text-align:left;padding:12px 10px">Yang Kamu Nilai</th>
+          <th class="bad">Konten Kreator<br>Freelance</th>
+          <th class="mid">Buat Sendiri<br>Tanpa AI</th>
+          <th class="good">Konten Kilat<br>Rp 79.000</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Biaya bulanan</td><td class="bad-val">Rp 2-15 juta</td><td class="mid-val">Rp 0 (tapi waktu mahal)</td><td class="good-val">Rp 0 (sudah bayar)</td></tr>
+        <tr><td>Waktu tunggu per konten</td><td class="bad-val">1-3 hari</td><td class="mid-val">2-3 jam</td><td class="good-val">5-15 menit</td></tr>
+        <tr><td>Jumlah konten per hari</td><td class="bad-val">1-3 konten</td><td class="mid-val">1-2 konten</td><td class="good-val">Unlimited</td></tr>
+        <tr><td>Tersedia 24 jam</td><td class="bad-val">❌ Jam kerja saja</td><td class="mid-val">⚠️ Tergantung tenaga</td><td class="good-val">✅ Kapan saja</td></tr>
+        <tr><td>Konsistensi kualitas</td><td class="bad-val">Tergantung mood</td><td class="mid-val">Naik turun</td><td class="good-val">Konsisten selalu</td></tr>
+        <tr><td>Revisi</td><td class="bad-val">Terbatas + biaya</td><td class="mid-val">Bisa tapi melelahkan</td><td class="good-val">Unlimited gratis</td></tr>
+        <tr><td>Paham niche bisnis</td><td class="bad-val">Perlu briefing panjang</td><td class="mid-val">✅ Tapi butuh riset</td><td class="good-val">✅ Tinggal isi variabel</td></tr>
+        <tr><td>SEO-friendly marketplace</td><td class="bad-val">⚠️ Tergantung ahlinya</td><td class="mid-val">❌ Jarang tahu caranya</td><td class="good-val">✅ Sudah dioptimalkan</td></tr>
+        <tr><td>Bisa mulai hari ini</td><td class="bad-val">❌ Perlu cari & brief dulu</td><td class="mid-val">⚠️ Butuh inspirasi</td><td class="good-val">✅ Download → langsung pakai</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE STACK -->
+<section style="background:#fff">
+  <div class="container">
+    <div class="sec-label">Nilai Sebenarnya</div>
+    <h2>Berapa Nilai Nyata yang Kamu Dapat?</h2>
+    <div class="ul-divider"></div>
+    <div class="value-item">
+      <div class="value-desc"><h3>📋 Master Library 1.000+ Prompt AI</h3><p>Setara dengan jasa copywriter selama 2-3 bulan penuh</p></div>
+      <div class="value-price">Rp 1.200.000</div>
+    </div>
+    <div class="value-item">
+      <div class="value-desc"><h3>🎨 Visual Brief 105 Template Canva</h3><p>Panduan desain 11 platform — setara briefing desainer 3 bulan</p></div>
+      <div class="value-price">Rp 350.000</div>
+    </div>
+    <div class="value-item">
+      <div class="value-desc"><h3>📖 E-Book Panduan PDF — 9 Bab</h3><p>Panduan setup + rutinitas harian + checklist 30 hari</p></div>
+      <div class="value-price">Rp 150.000</div>
+    </div>
+    <div class="value-item">
+      <div class="value-desc"><h3>🎁 Update Gratis Selamanya</h3><p>Prompt & template terbaru otomatis kamu dapat</p></div>
+      <div class="value-price">Rp 200.000</div>
+    </div>
+    <div class="value-total-box">
+      <div class="vt-row"><span class="lbl">Total Nilai yang Kamu Dapatkan</span><span class="val">Rp 1.900.000</span></div>
+      <div class="vt-row big"><span class="lbl">Kamu Bayar Cuma</span><span class="val" style="color:#e8611a;font-size:26px">Rp 79.000</span></div>
+    </div>
+    <div class="your-price-box">
+      <span class="lbl">💜 Kamu hemat</span>
+      <span class="val">Rp 1.821.000</span>
+    </div>
+
+    <!-- ROI CALCULATOR -->
+    <div class="roi-calc" style="margin-top:24px">
+      <h3>🧮 Kalkulasi ROI Bulanan Kamu</h3>
+      <div class="roi-row"><span class="lbl">Biaya copywriter (12 konten/bulan)</span><span class="val red">- Rp 1.800.000</span></div>
+      <div class="roi-row"><span class="lbl">Biaya desainer Canva (template basic)</span><span class="val red">- Rp 750.000</span></div>
+      <div class="roi-row"><span class="lbl">Waktu yang bisa kamu hemat (3 jam × 30 hari)</span><span class="val green">+ 90 jam/bulan</span></div>
+      <div class="roi-row"><span class="lbl">Biaya Konten Kilat (sekali bayar)</span><span class="val green">- Rp 79.000 TOTAL</span></div>
+      <div class="roi-total">
+        <span class="lbl">Penghematan bulanan kamu</span>
+        <span class="val">Rp 2.471.000</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section style="background:#f5f3ff">
+  <div class="container">
+    <div class="sec-label">Isi Paket Lengkap</div>
+    <h2>Semua yang Kamu Dapatkan</h2>
+    <div class="ul-divider"></div>
+    <div class="bonus-item">
+      <div class="bonus-num">1</div>
+      <div class="bonus-content">
+        <h3>📋 Master Library 1.000+ Prompt AI</h3>
+        <p>10 kategori prompt untuk semua kebutuhan bisnis. Masing-masing 100 prompt, dioptimalkan untuk UMKM Indonesia. Copy → ganti variabel → kirim ke AI → konten siap. Berlaku untuk Claude, ChatGPT, dan Gemini.</p>
+        <div class="bonus-tags"><span>Caption IG & FB</span><span>Meta Ads</span><span>CS & WA</span><span>Marketplace SEO</span><span>TikTok Reels</span><span>Email</span><span>Riset</span><span>Operasional</span><span>Branding</span><span>Growth</span></div>
+      </div>
+      <div class="value-tag">Nilai Rp 1.200.000</div>
+    </div>
+    <div class="bonus-item">
+      <div class="bonus-num">2</div>
+      <div class="bonus-content">
+        <h3>🎨 Visual Brief 105 Template Canva</h3>
+        <p>Panduan desain untuk 105 template Canva siap edit — 11 platform digital dan cetak. Ukuran resmi, elemen wajib, panduan warna, tipografi, cara export yang benar. Tidak butuh jago desain.</p>
+        <div class="bonus-tags"><span>Instagram</span><span>TikTok</span><span>WhatsApp</span><span>Shopee</span><span>Tokopedia</span><span>Facebook</span><span>YouTube</span><span>Print</span></div>
+      </div>
+      <div class="value-tag">Nilai Rp 350.000</div>
+    </div>
+    <div class="bonus-item">
+      <div class="bonus-num">3</div>
+      <div class="bonus-content">
+        <h3>📖 E-Book Panduan PDF — 9 Bab Lengkap</h3>
+        <p>Dari setup awal sampai mahir. Rutinitas 15 menit/hari yang terbukti, teknik prompting lanjutan, panduan Canva, checklist sukses 30 hari pertama, FAQ, dan troubleshooting lengkap.</p>
+        <div class="bonus-tags"><span>9 Bab</span><span>Checklist 30 Hari</span><span>Rutinitas Harian</span><span>Tips AI Lanjutan</span></div>
+      </div>
+      <div class="value-tag">Nilai Rp 150.000</div>
+    </div>
+    <div class="bonus-item" style="border:2px dashed #7c3aed;background:#f5f3ff">
+      <div class="bonus-num" style="background:#f59e0b">🎁</div>
+      <div class="bonus-content">
+        <h3>🎁 BONUS: Update Gratis Selamanya</h3>
+        <p>Bayar Rp 79.000 sekali — dapat semua update prompt baru, template baru, dan panduan baru untuk selamanya. Tidak ada biaya tambahan apapun.</p>
+        <div class="bonus-tags"><span>Prompt Terbaru</span><span>Template Baru</span><span>Otomatis Gratis</span></div>
+      </div>
+      <div class="value-tag" style="background:#f59e0b">Bonus Eksklusif</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS WITH ROI -->
+<section style="background:#fff">
+  <div class="container">
+    <div class="sec-label">ROI Nyata dari Pengguna</div>
+    <h2>Mereka Sudah Buktikan Sendiri</h2>
+    <div class="ul-divider"></div>
+    <div class="testi-grid">
+      <div class="tc"><div class="tc-top"><div class="tc-stars">★★★★★</div><div class="result-pill">Hemat Rp 3 juta/bulan</div></div><blockquote>"Sebelumnya bayar konten kreator Rp 3 juta per bulan untuk 12 konten. Sekarang buat sendiri 30 konten per bulan dengan kualitas lebih konsisten. Uang Rp 3 juta itu saya alihkan ke modal produksi."</blockquote><div class="tc-author"><div class="tc-avatar">BP</div><div><div class="tc-name">Budi P.</div><div class="tc-role">Owner Sepatu Online, Surabaya</div></div></div></div>
+      <div class="tc"><div class="tc-top"><div class="tc-stars">★★★★★</div><div class="result-pill">+3x penjualan Shopee</div></div><blockquote>"Deskripsi produk saya di Shopee dulu asal-asalan. Setelah pakai prompt dari kit ini, rewrite semua produk dalam 1 hari. Sebulan kemudian penjualan naik 3x lipat. Worth it banget."</blockquote><div class="tc-author"><div class="tc-avatar">WS</div><div><div class="tc-name">Wulandari S.</div><div class="tc-role">Seller Peralatan Dapur, Bandung</div></div></div></div>
+      <div class="tc"><div class="tc-top"><div class="tc-stars">★★★★★</div><div class="result-pill">ROI 24x dalam sebulan</div></div><blockquote>"Bayar Rp 79rb, dalam sebulan dapat order baru senilai Rp 1,9 juta dari konten Instagram yang dibuat pakai prompt ini. ROI 24x. Nggak masuk akal tapi nyata."</blockquote><div class="tc-author"><div class="tc-avatar">FM</div><div><div class="tc-name">Fajar M.</div><div class="tc-role">Owner Jasa Foto Produk, Jakarta</div></div></div></div>
+      <div class="tc"><div class="tc-top"><div class="tc-stars">★★★★★</div><div class="result-pill">Iklan ROAS 4x</div></div><blockquote>"Copy Meta Ads dari prompt kategori 2 langsung convert dari hari pertama. ROAS 4x di bulan pertama. Biasanya iklan saya habis tanpa hasil karena tidak tahu cara nulis copy yang benar."</blockquote><div class="tc-author"><div class="tc-avatar">RA</div><div><div class="tc-name">Reza A.</div><div class="tc-role">Owner Brand Fashion, Bandung</div></div></div></div>
+      <div class="tc"><div class="tc-top"><div class="tc-stars">★★★★★</div><div class="result-pill">Tidak Perlu Desainer</div></div><blockquote>"Saya selalu bayar desainer Rp 1,5 juta per bulan untuk template sosmed. Sekarang dengan Visual Brief + Canva, semua template saya buat sendiri dalam 30 menit. Hasilnya lebih konsisten juga."</blockquote><div class="tc-author"><div class="tc-avatar">LH</div><div><div class="tc-name">Lina H.</div><div class="tc-role">Owner Skincare Organik, Yogyakarta</div></div></div></div>
+      <div class="tc"><div class="tc-top"><div class="tc-stars">★★★★★</div><div class="result-pill">Omzet +65% dalam 60 hari</div></div><blockquote>"Pakai kombinasi prompt caption, deskripsi produk, dan template Canva dari kit ini selama 2 bulan. Omzet naik 65%. Yang paling kerasa: konten jadi konsisten, baru deh follower dan penjualan ikut naik."</blockquote><div class="tc-author"><div class="tc-avatar">DM</div><div><div class="tc-name">Dian M.</div><div class="tc-role">Owner Toko Herbal, Malang</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guar-sec" style="padding:52px 20px">
+  <div class="container">
+    <div class="sec-label" style="color:#a78bfa">Nol Risiko, Dijamin</div>
+    <h2>Garansi 7 Hari Uang Kembali 100%</h2>
+    <div class="ul-divider" style="background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div>
+    <div class="g-box">
+      <div class="g-icon">🛡️</div>
+      <div class="g-text">
+        <h3>Coba 7 Hari — Tidak Worth It? Refund Penuh.</h3>
+        <p>Kami sangat yakin dengan nilai yang diberikan Konten Kilat ini. Tapi kalau dalam <b>7 hari pertama</b> setelah pembelian kamu merasa produk ini tidak sepadan — <b>hubungi kami dan kami kembalikan 100% uangmu.</b></p>
+        <p>Tidak ada pertanyaan. Tidak ada syarat aneh. Tidak ada proses berbelit. <b>Semua risiko ada di kami — bukan di kamu.</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RISK REVERSAL -->
+<section style="background:#f5f3ff;padding:52px 20px">
+  <div class="container">
+    <div class="sec-label">Semua Alasan untuk Tidak Beli Sudah Kami Atasi</div>
+    <h2>Tidak Ada Risiko yang Tersisa</h2>
+    <div class="ul-divider"></div>
+    <ul class="risk-list">
+      <li><span>🛡️</span><div><strong>Garansi 7 hari uang kembali</strong> — tidak worth it? Refund penuh, tidak ada pertanyaan</div></li>
+      <li><span>⚡</span><div><strong>Akses instan</strong> — langsung download setelah bayar, tidak perlu tunggu</div></li>
+      <li><span>♾️</span><div><strong>Bayar sekali selamanya</strong> — tidak ada biaya bulanan atau tersembunyi apapun</div></li>
+      <li><span>🆓</span><div><strong>Platform AI gratis</strong> — Claude, ChatGPT, Gemini semua ada versi gratis yang cukup</div></li>
+      <li><span>📱</span><div><strong>Bisa dari HP</strong> — tidak perlu laptop canggih atau software berbayar</div></li>
+      <li><span>🔄</span><div><strong>Update gratis selamanya</strong> — setiap ada yang baru, otomatis kamu dapat</div></li>
+      <li><span>🎯</span><div><strong>Untuk semua jenis bisnis</strong> — prompt bisa dikustomisasi untuk bisnis apapun</div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:52px 20px;background:#fff">
+  <div class="container">
+    <div class="sec-label">Pertanyaan Umum</div>
+    <h2>Yang Paling Sering Ditanyakan</h2>
+    <div class="ul-divider"></div>
+    <div class="faq-item"><div class="faq-q">Apakah ini bisa menggantikan copywriter sepenuhnya?</div><div class="faq-a">Untuk konten harian UMKM — ya, 90% bisa. AI menghasilkan draft berkualitas tinggi, kamu tinggal finalisasi dalam 1-2 menit. Untuk kampanye besar atau branding sangat spesifik, kamu mungkin masih butuh sentuhan profesional.</div></div>
+    <div class="faq-item"><div class="faq-q">Saya sudah punya desainer, masih perlu beli?</div><div class="faq-a">Visual Brief bisa digunakan bersama desainer kamu untuk mempercepat briefing. Tapi kalau budget terbatas, template Canva dari kit ini sudah cukup untuk semua kebutuhan visual harian UMKM.</div></div>
+    <div class="faq-item"><div class="faq-q">Apakah hasilnya akan terlihat seperti "buatan AI"?</div><div class="faq-a">Tidak, kalau kamu tambahkan sentuhan personal. AI menghasilkan draft — kamu yang membuatnya terasa human dengan menambahkan konteks spesifik bisnismu. Semua pengguna kami melaporkan konten terasa natural dan autentik.</div></div>
+    <div class="faq-item"><div class="faq-q">Berapa lama ROI-nya terasa?</div><div class="faq-a">Rata-rata pengguna sudah merasakan penghematan waktu dari hari pertama. Untuk peningkatan engagement dan penjualan: 2-4 minggu posting konsisten. Untuk SEO marketplace: 1-2 minggu setelah update deskripsi.</div></div>
+    <div class="faq-item"><div class="faq-q">Apakah ada biaya tersembunyi?</div><div class="faq-a">Tidak ada. Bayar Rp 79.000 sekali. Tidak ada subscription, tidak ada upsell, tidak ada biaya per prompt, tidak ada apapun. Platform AI yang kamu gunakan pun gratis (Claude, ChatGPT, Gemini).</div></div>
+    <div class="faq-item"><div class="faq-q">Bagaimana jika saya tidak puas?</div><div class="faq-a">Hubungi kami dalam 7 hari setelah pembelian dan kami kembalikan 100% uangmu tanpa pertanyaan. Garansi ini berlaku penuh.</div></div>
+    <div class="faq-item"><div class="faq-q">Format filenya apa?</div><div class="faq-a">PDF untuk e-book panduan, Word .docx untuk prompt library dan visual brief. Bisa dibuka di semua perangkat gratis menggunakan Google Docs, WPS, atau Microsoft Word.</div></div>
+  </div>
+</section>
+
+<!-- FINAL CALC + CTA -->
+<section style="padding:52px 20px;background:#f9f9f9" id="order">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Kalkulasi Terakhir Sebelum Kamu Putuskan</h2>
+      <div style="background:#1a1a2e;border-radius:10px;padding:20px;margin-bottom:20px">
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:14px"><span style="color:#ccc">Copywriter lepas (1 bulan)</span><span style="color:#f87171;font-weight:700">Rp 3.000.000+</span></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:14px"><span style="color:#ccc">Desainer Canva (1 bulan)</span><span style="color:#f87171;font-weight:700">Rp 1.500.000+</span></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:2px solid #7c3aed;font-size:14px"><span style="color:#ccc">Konten Kilat</span><span style="color:#86efac;font-weight:700">Rp 79.000 (selamanya)</span></div>
+        <div style="display:flex;justify-content:space-between;padding-top:12px;font-size:15px;font-weight:800"><span style="color:#fff">Kamu hemat per bulan</span><span style="color:#86efac;font-size:22px">Rp 4.421.000</span></div>
+      </div>
+      <p class="cta-sub">Satu kali bayar. Akses selamanya. Garansi 7 hari.</p>
+      <ul class="cta-includes">
+        <li>📋 Master Library 1.000+ Prompt AI<span class="val">Rp 1.200.000</span></li>
+        <li>🎨 Visual Brief 105 Template Canva<span class="val">Rp 350.000</span></li>
+        <li>📖 E-Book Panduan PDF 9 Bab<span class="val">Rp 150.000</span></li>
+        <li>🎁 Update Gratis Selamanya<span class="val">Rp 200.000</span></li>
+      </ul>
+      <div class="cta-price">
+        <div class="old">Total Nilai: Rp 1.900.000</div>
+        <div class="new">Rp 79.000</div>
+        <div class="disc">🔥 Hemat 96% — Bayar Sekali Selamanya</div>
+      </div>
+      <div class="cta-timer">⏰ Harga ini berakhir dalam: <span class="t" id="timer2">23:47:12</span></div>
+      <a href="#" class="btn-final">Hemat Rp 4 Juta — Beli Sekarang →<small>Akses langsung · Garansi 7 hari · Bayar sekali pakai selamanya</small></a>
+      <p class="cta-footnote">🔒 Pembayaran aman · 🛡️ Garansi 7 hari uang kembali · ⚡ Download langsung</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Konten Kilat · Semua Hak Dilindungi</p>
+  <p style="margin-top:6px"><a href="#">Syarat & Ketentuan</a> · <a href="#">Kebijakan Privasi</a> · <a href="#">Hubungi Kami</a></p>
+</footer>
+
+<script>
+function startTimer(secs,els){var t=secs;setInterval(function(){var h=String(Math.floor(t/3600)).padStart(2,'0');var m=String(Math.floor((t%3600)/60)).padStart(2,'0');var s=String(t%60).padStart(2,'0');var str=h+':'+m+':'+s;els.forEach(function(e){if(e)e.textContent=str;});if(--t<0)t=secs;},1000);}
+var key='lp3_end';var end=localStorage.getItem(key);if(!end){end=Date.now()+23*3600000+47*60000;localStorage.setItem(key,end);}
+var rem=Math.max(0,Math.floor((+end-Date.now())/1000));
+startTimer(rem,[document.getElementById('timer'),document.getElementById('timer2')]);
+</script>
+</body>
+</html>

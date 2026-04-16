@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Konten Kilat — 1.847 UMKM Sudah Pakai Ini</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a1a2e;background:#fff;line-height:1.65;font-size:15px}
+a{text-decoration:none;color:inherit}
+.container{max-width:700px;margin:0 auto;padding:0 20px}
+.timer-bar{background:#16a34a;color:#fff;text-align:center;padding:11px 16px;font-size:13px;font-weight:600;position:sticky;top:0;z-index:100}
+.timer-bar .live{background:#fff;color:#16a34a;font-weight:800;padding:2px 8px;border-radius:10px;font-size:12px;margin-right:6px}
+.timer-bar .t{font-weight:800;font-variant-numeric:tabular-nums;text-decoration:underline}
+.hero{background:#f0fdf4;padding:52px 20px 44px;border-bottom:3px solid #16a34a}
+.proof-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #86efac;color:#16a34a;font-size:13px;font-weight:700;padding:8px 16px;border-radius:20px;margin-bottom:20px}
+.hero h1{font-size:clamp(26px,5.5vw,42px);font-weight:900;line-height:1.18;margin-bottom:18px}
+.hero h1 em{color:#16a34a;font-style:normal}
+.hero-sub{font-size:17px;color:#444;margin-bottom:24px;max-width:560px}
+.live-counter{display:flex;align-items:center;gap:14px;background:#fff;border:1.5px solid #86efac;border-radius:12px;padding:16px 20px;max-width:420px;margin-bottom:24px}
+.counter-num{font-size:36px;font-weight:900;color:#16a34a;line-height:1}
+.counter-text strong{display:block;font-size:14px;color:#1a1a2e;margin-bottom:2px}
+.counter-text span{font-size:12px;color:#666}
+.price-wrap{margin-bottom:18px}
+.price-wrap .old{font-size:15px;color:#aaa;text-decoration:line-through}
+.price-wrap .new{font-size:42px;font-weight:900;color:#e8611a;line-height:1}
+.save-badge{display:inline-block;background:#e8611a;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;margin-left:8px;vertical-align:middle}
+.btn{display:block;background:#16a34a;color:#fff;font-size:18px;font-weight:800;padding:20px;border-radius:10px;text-align:center;max-width:480px;box-shadow:0 6px 24px rgba(22,163,74,.3)}
+.btn small{display:block;font-size:11px;font-weight:400;opacity:.85;margin-top:4px}
+.trust-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px;font-size:12px;color:#888}
+section{padding:52px 20px}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#16a34a;margin-bottom:8px}
+h2{font-size:clamp(22px,4vw,30px);font-weight:900;line-height:1.25;margin-bottom:8px}
+.sec-sub{font-size:15px;color:#555;margin-bottom:28px}
+.ul-divider{height:3px;background:linear-gradient(90deg,#16a34a,#86efac);border-radius:2px;margin:8px 0 28px}
+/* SOCIAL WALL */
+.social-wall{background:#1a1a2e;padding:28px 20px;color:#fff;text-align:center}
+.social-wall p{font-size:14px;color:#aaa;margin-bottom:16px}
+.avatars{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;border:2px solid #fff;color:#fff}
+.join-ticker{font-size:13px;color:#ccc}
+.join-ticker b{color:#86efac}
+/* FOMO PROOF */
+.fomo-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+.fomo-card{background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:16px;text-align:center}
+.fomo-num{font-size:30px;font-weight:900;color:#16a34a}
+.fomo-lbl{font-size:12px;color:#555;margin-top:3px}
+/* WHO LIST */
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.who-item{background:#f9f9f9;border-radius:8px;padding:14px;border:1px solid #e8e8e8;display:flex;gap:10px;align-items:flex-start}
+.who-icon{font-size:22px;min-width:28px}
+.who-text b{display:block;font-size:14px;margin-bottom:2px}
+.who-text{font-size:13px;color:#333;line-height:1.4}
+/* WHAT THEY GET */
+.pkg{border:2px solid #16a34a;border-radius:12px;overflow:hidden;margin-bottom:14px}
+.pkg-head{background:#16a34a;color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+.pkg-head h3{font-size:15px;font-weight:700}
+.pkg-head .badge{background:#fff;color:#16a34a;font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px}
+.pkg-body{padding:16px 18px;background:#fff}
+.pkg-body p{font-size:13px;color:#555;margin-bottom:10px;line-height:1.55}
+.pkg-tags{display:flex;flex-wrap:wrap;gap:6px}
+.pkg-tags span{background:#f0fdf4;color:#16a34a;font-size:11px;font-weight:600;padding:3px 10px;border-radius:10px;border:1px solid #86efac}
+/* VALUE STACK */
+.value-stack{background:#f0fdf4;border-radius:14px;padding:24px;margin-top:20px;border:1px solid #86efac}
+.vs-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #dcfce7;font-size:14px}
+.vs-row:last-of-type{border-bottom:none}
+.vs-row .val{font-weight:700;color:#dc2626}
+.vs-total{display:flex;justify-content:space-between;padding:16px 0 0;margin-top:4px;border-top:2px solid #16a34a}
+.vs-total .lbl{font-size:16px;font-weight:800}
+.vs-total .val{font-size:20px;font-weight:900;color:#dc2626}
+.vs-yours{background:#16a34a;border-radius:10px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.vs-yours .lbl{color:#fff;font-size:16px;font-weight:700}
+.vs-yours .val{color:#fff;font-size:28px;font-weight:900}
+/* RESULTS */
+.result-item{display:flex;gap:14px;align-items:flex-start;padding:18px 0;border-bottom:1px solid #f0f0f0}
+.result-item:last-child{border-bottom:none}
+.r-icon{font-size:30px;min-width:38px}
+.r-text h3{font-size:15px;font-weight:700;margin-bottom:3px}
+.r-text p{font-size:13px;color:#666;line-height:1.55}
+/* TESTI */
+.testi-grid{display:grid;gap:14px}
+.tc{background:#f9f9f9;border-radius:10px;padding:20px;border-left:3px solid #16a34a;border:1px solid #e8e8e8;border-left:3px solid #16a34a}
+.tc-top{display:flex;justify-content:space-between;margin-bottom:10px}
+.tc-stars{color:#f59e0b;font-size:14px}
+.result-pill{background:#f0fdf4;color:#16a34a;font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px}
+.tc blockquote{font-size:14px;color:#333;line-height:1.65;font-style:italic;margin-bottom:12px}
+.tc-author{display:flex;gap:10px;align-items:center}
+.tc-avatar{width:38px;height:38px;border-radius:50%;background:#16a34a;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0}
+.tc-name{font-size:13px;font-weight:700}
+.tc-role{font-size:12px;color:#888}
+/* GUARANTEE */
+.guar-sec{background:#1a1a2e;color:#fff}
+.guar-sec h2{color:#fff}
+.g-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:28px;margin-top:20px;display:flex;gap:20px;align-items:flex-start}
+.g-icon{font-size:52px;flex-shrink:0}
+.g-text h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:10px}
+.g-text p{font-size:14px;color:#ccc;line-height:1.7}
+.g-text b{color:#fff}
+.g-text p+p{margin-top:10px}
+/* RISK */
+.risk-list{list-style:none}
+.risk-list li{padding:14px 16px;margin-bottom:10px;background:#f9f9f9;border-radius:8px;border:1px solid #e8e8e8;font-size:14px;color:#333;display:flex;gap:10px;align-items:flex-start}
+/* FAQ */
+.faq-item{border:1px solid #e8e8e8;border-radius:8px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:16px;font-size:15px;font-weight:700;background:#f9f9f9;display:flex;justify-content:space-between}
+.faq-q::after{content:"+";font-size:20px;color:#16a34a;font-weight:400}
+.faq-a{padding:14px 16px;font-size:14px;color:#555;line-height:1.65;border-top:1px solid #e8e8e8}
+/* CTA */
+.cta-box{background:linear-gradient(160deg,#f0fdf4,#fff);border:2px solid #16a34a;border-radius:16px;padding:32px 24px;max-width:500px;margin:0 auto}
+.cta-box h2{font-size:24px;font-weight:900;margin-bottom:6px;text-align:center}
+.cta-sub{text-align:center;font-size:14px;color:#555;margin-bottom:24px}
+.cta-includes{list-style:none;margin-bottom:24px;border:1px solid #dcfce7;border-radius:10px;overflow:hidden}
+.cta-includes li{padding:11px 14px;font-size:14px;border-bottom:1px solid #dcfce7;display:flex;justify-content:space-between;background:#fff;align-items:center}
+.cta-includes li:last-child{border-bottom:none}
+.cta-includes li::before{content:"✅ "}
+.cta-includes .val{font-size:12px;color:#aaa;text-decoration:line-through;flex-shrink:0;margin-left:8px}
+.cta-price{text-align:center;margin-bottom:16px}
+.cta-price .old{font-size:14px;color:#aaa;text-decoration:line-through}
+.cta-price .new{font-size:44px;font-weight:900;color:#e8611a;line-height:1.1}
+.cta-price .disc{display:inline-block;background:#16a34a;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;margin-top:4px}
+.cta-timer{background:#1a1a2e;border-radius:8px;padding:12px;text-align:center;margin-bottom:16px;font-size:13px;color:#ccc}
+.cta-timer .t{color:#86efac;font-weight:800;font-size:16px;font-variant-numeric:tabular-nums}
+.btn-final{display:block;background:#e8611a;color:#fff;font-size:19px;font-weight:800;padding:20px;border-radius:10px;text-align:center;margin-bottom:12px;box-shadow:0 6px 24px rgba(232,97,26,.35)}
+.btn-final small{display:block;font-size:12px;font-weight:400;opacity:.85;margin-top:4px}
+.cta-footnote{text-align:center;font-size:12px;color:#888}
+footer{background:#1a1a2e;color:#666;text-align:center;padding:24px 20px;font-size:12px}
+footer a{color:#888}
+@media(max-width:500px){.fomo-grid,.who-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="timer-bar"><span class="live">🟢 LIVE</span> 47 orang sedang melihat halaman ini · Harga spesial berakhir dalam <span class="t" id="timer">23:47:12</span></div>
+
+<section class="hero">
+  <div class="container">
+    <div class="proof-badge">✅ Sudah dipakai 1.847 UMKM Indonesia</div>
+    <h1>UMKM Lain Sudah Pakai AI untuk Konten.<br><em>Kapan Giliran Bisnismu?</em></h1>
+    <p class="hero-sub">Sementara kamu masih bingung mau posting apa, kompetitormu sudah punya <strong>1.000+ prompt AI siap pakai</strong> untuk semua kebutuhan konten — caption, iklan, deskripsi produk, TikTok, sampai strategi scale. Tinggal copy-paste.</p>
+    <div class="live-counter">
+      <div class="counter-num">1.847</div>
+      <div class="counter-text"><strong>UMKM sudah bergabung</strong><span>Rata-rata hemat 3 jam konten per hari</span></div>
+    </div>
+    <div class="price-wrap">
+      <div class="old">Harga Normal: Rp 199.000</div>
+      <div><span class="new">Rp 79.000</span><span class="save-badge">Hemat 60%</span></div>
+    </div>
+    <a href="#order" class="btn">Gabung Sekarang — Sebelum Harga Naik →<small>Akses langsung · Bayar sekali · Garansi 7 hari uang kembali</small></a>
+    <div class="trust-row"><span>🔒 Pembayaran Aman</span><span>⚡ Akses Instan</span><span>🇮🇩 Bahasa Indonesia</span><span>♾️ Selamanya</span></div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF WALL -->
+<div class="social-wall">
+  <div class="container">
+    <p>Bergabung bersama UMKM dari seluruh Indonesia 🇮🇩</p>
+    <div class="avatars">
+      <div class="av" style="background:#e8611a">SR</div>
+      <div class="av" style="background:#16a34a">DW</div>
+      <div class="av" style="background:#2563eb">RA</div>
+      <div class="av" style="background:#7c3aed">NK</div>
+      <div class="av" style="background:#0d9488">BH</div>
+      <div class="av" style="background:#e8611a">YP</div>
+      <div class="av" style="background:#dc2626">MA</div>
+      <div class="av" style="background:#16a34a">FS</div>
+      <div class="av" style="background:#1a1a2e">RH</div>
+      <div class="av" style="background:#7c3aed">+1.8k</div>
+    </div>
+    <p class="join-ticker">⚡ <b>Fika dari Semarang</b> baru bergabung 3 menit lalu · <b>Andi dari Makassar</b> baru bergabung 8 menit lalu</p>
+  </div>
+</div>
+
+<!-- FOMO NUMBERS -->
+<section style="background:#fff">
+  <div class="container">
+    <div class="sec-label">Data Tidak Bohong</div>
+    <h2>Ini yang Terjadi Setelah 30 Hari Pakai Kit Ini</h2>
+    <div class="ul-divider"></div>
+    <div class="fomo-grid">
+      <div class="fomo-card"><div class="fomo-num">+40%</div><div class="fomo-lbl">Rata-rata peningkatan engagement Instagram</div></div>
+      <div class="fomo-card"><div class="fomo-num">3x</div><div class="fomo-lbl">Peningkatan penjualan marketplace rata-rata</div></div>
+      <div class="fomo-card"><div class="fomo-num">3 jam</div><div class="fomo-lbl">Waktu yang dihemat per hari untuk konten</div></div>
+      <div class="fomo-card"><div class="fomo-num">7 hari</div><div class="fomo-lbl">Rata-rata produk Shopee masuk halaman 1</div></div>
+    </div>
+    <p style="font-size:13px;color:#888;text-align:center;margin-top:4px">*Berdasarkan laporan mandiri dari pengguna aktif</p>
+  </div>
+</section>
+
+<!-- THE HARD TRUTH -->
+<section style="background:#1a1a2e;padding:52px 20px">
+  <div class="container">
+    <div class="sec-label" style="color:#86efac">Kenyataan yang Harus Kamu Tahu</div>
+    <h2 style="color:#fff">Kompetitormu Sudah Bergerak. Kamu Masih Menunggu Apa?</h2>
+    <div class="ul-divider" style="background:linear-gradient(90deg,#16a34a,#86efac)"></div>
+    <p style="font-size:16px;color:#ccc;line-height:1.8;margin-bottom:24px">Tahun 2026, <strong style="color:#fff">lebih dari 60% bisnis kecil di Indonesia</strong> sudah menggunakan AI untuk membantu operasional mereka — termasuk pembuatan konten marketing. Yang belum pakai? Mereka perlahan-lahan kehilangan visibilitas.<br><br>Bukan karena produk mereka jelek. Tapi karena mereka <em style="color:#f59e0b">tidak terlihat</em> — konten tidak konsisten, deskripsi produk tertimbun kompetitor, iklan tidak convert.</p>
+    <div style="display:grid;gap:12px">
+      <div style="background:rgba(255,255,255,.07);border-left:4px solid #86efac;padding:16px;border-radius:0 8px 8px 0;font-size:15px;color:#ddd">Seller yang update deskripsi produk dengan AI rata-rata naik <strong style="color:#86efac">2-3 tingkat halaman</strong> di Shopee dalam 2 minggu</div>
+      <div style="background:rgba(255,255,255,.07);border-left:4px solid #86efac;padding:16px;border-radius:0 8px 8px 0;font-size:15px;color:#ddd">UMKM yang posting konten konsisten (≥5x/minggu) tumbuh <strong style="color:#86efac">2.7x lebih cepat</strong> dibanding yang tidak konsisten</div>
+      <div style="background:rgba(255,255,255,.07);border-left:4px solid #86efac;padding:16px;border-radius:0 8px 8px 0;font-size:15px;color:#ddd">Biaya akuisisi pelanggan bisa turun <strong style="color:#86efac">hingga 40%</strong> ketika copy iklan dioptimalkan dengan AI</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IS THIS FOR -->
+<section style="background:#f0fdf4">
+  <div class="container">
+    <div class="sec-label">Siapa yang Cocok</div>
+    <h2>Ini untuk Kamu Jika...</h2>
+    <div class="ul-divider"></div>
+    <div class="who-grid">
+      <div class="who-item"><span class="who-icon">🛒</span><div class="who-text"><b>Seller marketplace</b>Shopee, Tokopedia yang ingin naik halaman 1 tanpa bayar iklan mahal</div></div>
+      <div class="who-item"><span class="who-icon">📱</span><div class="who-text"><b>Penjual via sosmed</b>Instagram, TikTok, Facebook yang butuh konten harian tanpa pusing</div></div>
+      <div class="who-item"><span class="who-icon">🍕</span><div class="who-text"><b>Bisnis F&B</b>Makanan, minuman, katering yang perlu foto & caption menggugah selera</div></div>
+      <div class="who-item"><span class="who-icon">💄</span><div class="who-text"><b>Brand kecantikan lokal</b>Skincare, makeup, perawatan yang mau kelihatan premium</div></div>
+      <div class="who-item"><span class="who-icon">🎨</span><div class="who-text"><b>Produk handmade & kreatif</b>Kerajinan, batik, rajutan, furnitur yang mau go digital</div></div>
+      <div class="who-item"><span class="who-icon">✂️</span><div class="who-text"><b>Bisnis jasa lokal</b>Salon, laundry, bengkel, les privat yang butuh promosi efektif</div></div>
+      <div class="who-item"><span class="who-icon">📦</span><div class="who-text"><b>Reseller & dropshipper</b>Yang mau stand out dari ribuan penjual produk serupa</div></div>
+      <div class="who-item"><span class="who-icon">🚀</span><div class="who-text"><b>UMKM yang serius scale</b>Yang ingin tumbuh cepat di era digital tanpa tim marketing besar</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section style="background:#fff">
+  <div class="container">
+    <div class="sec-label">Isi Paket Lengkap</div>
+    <h2>Tiga Komponen yang Mengubah Cara Kamu Berbisnis Online</h2>
+    <div class="ul-divider"></div>
+
+    <div class="pkg">
+      <div class="pkg-head"><h3>📋 Master Library 1.000+ Prompt AI</h3><div class="badge">KOMPONEN UTAMA</div></div>
+      <div class="pkg-body">
+        <p>Koleksi 1.000+ prompt AI yang sudah terbukti efektif untuk UMKM Indonesia — 10 kategori, masing-masing 100 prompt. Copy → ganti nama produk → kirim ke AI → konten siap dalam hitungan detik. Berlaku untuk Claude, ChatGPT, dan Gemini.</p>
+        <div class="pkg-tags"><span>Caption IG & FB</span><span>Meta Ads Convert</span><span>CS & Follow Up WA</span><span>Deskripsi Marketplace</span><span>TikTok & Reels</span><span>Email Marketing</span><span>Riset Kompetitor</span><span>Operasional</span><span>Branding</span><span>Scale & Growth</span></div>
+      </div>
+    </div>
+
+    <div class="pkg">
+      <div class="pkg-head"><h3>🎨 Visual Brief 105 Template Canva</h3><div class="badge">BONUS #1</div></div>
+      <div class="pkg-body">
+        <p>Panduan desain lengkap untuk 105 template Canva siap edit. Mencakup 11 platform digital dan cetak — dengan spesifikasi ukuran resmi, elemen wajib, panduan warna & tipografi, dan cara export yang benar untuk setiap platform.</p>
+        <div class="pkg-tags"><span>Instagram Feed & Stories</span><span>TikTok Covers</span><span>WhatsApp Business</span><span>Shopee & Tokopedia</span><span>Facebook</span><span>YouTube</span><span>Print & Cetak</span></div>
+      </div>
+    </div>
+
+    <div class="pkg">
+      <div class="pkg-head"><h3>📖 E-Book Panduan PDF — 9 Bab Lengkap</h3><div class="badge">BONUS #2</div></div>
+      <div class="pkg-body">
+        <p>Panduan lengkap dari nol sampai mahir: cara setup awal, rutinitas 15 menit/hari yang terbukti, teknik prompting lanjutan, panduan Canva, checklist sukses 30 hari, dan FAQ lengkap.</p>
+        <div class="pkg-tags"><span>9 Bab Lengkap</span><span>Checklist 30 Hari</span><span>Rutinitas Harian</span><span>Tips AI Lanjutan</span><span>FAQ & Troubleshoot</span></div>
+      </div>
+    </div>
+
+    <div class="pkg" style="border-color:#f59e0b">
+      <div class="pkg-head" style="background:#f59e0b"><h3>🎁 Update Gratis Selamanya</h3><div class="badge" style="color:#f59e0b">BONUS #3</div></div>
+      <div class="pkg-body">
+        <p>Setiap ada prompt baru, template baru, atau panduan baru — kamu otomatis dapat tanpa biaya tambahan. Ini bukan produk yang akan ketinggalan zaman — terus berkembang bersama tren AI terbaru.</p>
+        <div class="pkg-tags"><span>Prompt Terbaru</span><span>Template Baru</span><span>Panduan Update</span><span>Selamanya Gratis</span></div>
+      </div>
+    </div>
+
+    <div class="value-stack">
+      <div class="vs-row"><span>📋 Master Library 1.000+ Prompt AI</span><span class="val">Rp 1.200.000</span></div>
+      <div class="vs-row"><span>🎨 Visual Brief 105 Template Canva</span><span class="val">Rp 350.000</span></div>
+      <div class="vs-row"><span>📖 E-Book Panduan 9 Bab (PDF)</span><span class="val">Rp 150.000</span></div>
+      <div class="vs-row"><span>🎁 Update Gratis Selamanya</span><span class="val">Rp 200.000</span></div>
+      <div class="vs-total"><span class="lbl">Total Nilai</span><span class="val">Rp 1.900.000</span></div>
+      <div class="vs-yours"><span class="lbl">Harga Spesialmu</span><span class="val">Rp 79.000</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section style="background:#f0fdf4">
+  <div class="container">
+    <div class="sec-label">Hasil Nyata</div>
+    <h2>Apa yang Berubah Setelah Pakai Konten Kilat</h2>
+    <div class="ul-divider"></div>
+    <div class="result-item"><div class="r-icon">📈</div><div class="r-text"><h3>Engagement Instagram naik rata-rata 40% dalam 30 hari</h3><p>Dengan konten yang lebih konsisten, relevan, dan menarik — algoritma Instagram mulai merekomendasikan konten ke lebih banyak orang.</p></div></div>
+    <div class="result-item"><div class="r-icon">🔍</div><div class="r-text"><h3>Produk Shopee & Tokopedia masuk halaman 1 dalam 7 hari</h3><p>Deskripsi SEO-friendly yang dihasilkan AI membuat produk lebih mudah ditemukan pembeli yang sudah siap beli.</p></div></div>
+    <div class="result-item"><div class="r-icon">⏱️</div><div class="r-text"><h3>Hemat 2-3 jam per hari untuk urusan konten</h3><p>Konten 30 hari bisa diselesaikan dalam 1 sesi 2 jam di awal bulan. Sisa waktu untuk fokus ke hal yang lebih penting.</p></div></div>
+    <div class="result-item"><div class="r-icon">💬</div><div class="r-text"><h3>Respons pelanggan lebih cepat & lebih profesional</h3><p>Dengan template CS WA yang sudah siap, setiap pertanyaan dan keluhan pelanggan bisa ditangani dengan tepat dan cepat.</p></div></div>
+    <div class="result-item"><div class="r-icon">💰</div><div class="r-text"><h3>Hemat Rp 2-5 juta per bulan biaya konten</h3><p>Tidak perlu lagi bayar konten kreator atau desainer freelance untuk kebutuhan konten harian UMKM.</p></div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background:#fff">
+  <div class="container">
+    <div class="sec-label">1.847 UMKM Tidak Mungkin Salah</div>
+    <h2>Cerita Nyata dari Pengguna</h2>
+    <div class="ul-divider"></div>
+    <div class="testi-grid">
+      <div class="tc"><div class="tc-top"><div class="tc-stars">★★★★★</div><div class="result-pill">+40% engagement</div></div><blockquote>"Awalnya skeptis, tapi setelah coba prompt caption IG dalam 3 hari engagement naik 2x. Sekarang nggak bisa bayangin jualan tanpa ini."</blockquote><div class="tc-author"><div class="tc-avatar" style="background:#e8611a">AP</div><div><div class="tc-name">Anisa P.</div><div class="tc-role">Toko Baju Muslim, Yogyakarta</div></div></div></div>
+      <div class="tc"><div class="tc-top"><div class="tc-stars">★★★★★</div><div class="result-pill">Halaman 1 Tokopedia</div></div><blockquote>"Yang paling kerasa di deskripsi produk Tokopedia. Dulu produk saya di halaman 5-6, sekarang konsisten di halaman 1-2. Penjualan langsung ikut naik."</blockquote><div class="tc-author"><div class="tc-avatar" style="background:#2563eb">HS</div><div><div class="tc-name">Hendra S.</div><div class="tc-role">Seller Elektronik, Medan</div></div></div></div>
+      <div class="tc"><div class="tc-top"><div class="tc-stars">★★★★★</div><div class="result-pill">Customer Service Rapi</div></div><blockquote>"Template WA Business-nya yang paling saya suka. Customer service jadi lebih rapi dan profesional, repeat buyer naik drastis karena pelanggan merasa dilayani dengan baik."</blockquote><div class="tc-author"><div class="tc-avatar" style="background:#7c3aed">LK</div><div><div class="tc-name">Linda K.</div><div class="tc-role">Katering Rumahan, Semarang</div></div></div></div>
+      <div class="tc"><div class="tc-top"><div class="tc-stars">★★★★★</div><div class="result-pill">Hemat 3 Jam/Hari</div></div><blockquote>"Dulu paling males bikin konten karena butuh waktu lama. Sekarang dengan AI dan kit ini, konten 1 minggu bisa saya buat dalam 30 menit di hari Minggu. Weekday tinggal posting."</blockquote><div class="tc-author"><div class="tc-avatar" style="background:#0d9488">MT</div><div><div class="tc-name">Maya T.</div><div class="tc-role">Owner Hampers & Gift, Surabaya</div></div></div></div>
+      <div class="tc"><div class="tc-top"><div class="tc-stars">★★★★★</div><div class="result-pill">TikTok 50K Views</div></div><blockquote>"Script TikTok dari prompt kategori 5 beneran works. Video pertama yang saya buat pakai script dari kit ini tembus 50 ribu views organik. Sebelumnya paling banter 500 views."</blockquote><div class="tc-author"><div class="tc-avatar" style="background:#16a34a">BR</div><div><div class="tc-name">Bima R.</div><div class="tc-role">Toko Kopi Specialty, Medan</div></div></div></div>
+      <div class="tc"><div class="tc-top"><div class="tc-stars">★★★★★</div><div class="result-pill">ROI 24x</div></div><blockquote>"Bayar Rp 79rb, bulan pertama dapat order baru Rp 1,9 juta dari konten Instagram yang dibuat pakai kit ini. Nggak masuk akal tapi nyata. Investasi terbaik buat bisnis saya."</blockquote><div class="tc-author"><div class="tc-avatar" style="background:#e8611a">FM</div><div><div class="tc-name">Fajar M.</div><div class="tc-role">Jasa Foto Produk, Jakarta</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guar-sec" style="padding:52px 20px">
+  <div class="container">
+    <div class="sec-label" style="color:#86efac">Nol Risiko</div>
+    <h2>Garansi 7 Hari Uang Kembali 100%</h2>
+    <div class="ul-divider" style="background:linear-gradient(90deg,#16a34a,#86efac)"></div>
+    <div class="g-box">
+      <div class="g-icon">🛡️</div>
+      <div class="g-text">
+        <h3>Coba 7 Hari — Tidak Worth It? Refund Penuh, Tidak Ada Pertanyaan.</h3>
+        <p>Kami begitu yakin dengan kualitas Konten Kilat ini. Tapi kalau dalam <b>7 hari pertama</b> kamu merasa tidak mendapatkan nilai yang sepadan — <b>hubungi kami dan kami kembalikan 100% uangmu.</b></p>
+        <p>Tidak ada pertanyaan. Tidak ada syarat aneh-aneh. <b>Semua risiko ada di pihak kami. Kamu tidak perlu khawatir sama sekali.</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RISK REVERSAL -->
+<section style="background:#f0fdf4;padding:52px 20px">
+  <div class="container">
+    <div class="sec-label">Kenapa Tidak Ada Alasan untuk Menunggu</div>
+    <h2>Semua Kekhawatiranmu Sudah Kami Atasi</h2>
+    <div class="ul-divider"></div>
+    <ul class="risk-list">
+      <li><span>🛡️</span><div><strong>Garansi 7 hari</strong> — tidak suka, refund penuh tanpa pertanyaan</div></li>
+      <li><span>⚡</span><div><strong>Akses instan</strong> — langsung download setelah bayar, tidak perlu tunggu</div></li>
+      <li><span>♾️</span><div><strong>Bayar sekali pakai selamanya</strong> — tidak ada subscription bulanan</div></li>
+      <li><span>🆓</span><div><strong>Platform AI gratis</strong> — Claude, ChatGPT, Gemini semua ada versi gratis</div></li>
+      <li><span>📱</span><div><strong>Bisa dari HP</strong> — tidak perlu laptop mahal atau software berbayar</div></li>
+      <li><span>🔄</span><div><strong>Update gratis selamanya</strong> — setiap ada yang baru, kamu dapat otomatis</div></li>
+      <li><span>🇮🇩</span><div><strong>100% Bahasa Indonesia</strong> — relevan untuk pasar lokal kita</div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:52px 20px;background:#fff">
+  <div class="container">
+    <div class="sec-label">Pertanyaan Umum</div>
+    <h2>Yang Paling Sering Ditanyakan</h2>
+    <div class="ul-divider"></div>
+    <div class="faq-item"><div class="faq-q">Apakah harus paham teknologi dulu?</div><div class="faq-a">Sama sekali tidak. Kalau bisa copy-paste teks dan ganti kata dalam kurung, kamu sudah bisa pakai semua isi paket ini. Tidak ada coding, tidak ada setting rumit.</div></div>
+    <div class="faq-item"><div class="faq-q">AI mana yang bisa digunakan?</div><div class="faq-a">Claude.ai, ChatGPT, dan Gemini — semua bisa. Semuanya punya versi gratis yang cukup untuk penggunaan harian. Prompt dalam kit ini sudah dioptimalkan untuk ketiga platform.</div></div>
+    <div class="faq-item"><div class="faq-q">Apakah hasilnya bisa langsung dipakai tanpa diedit?</div><div class="faq-a">Hasil AI adalah draft yang sangat baik. Biasanya butuh 1-2 menit editing ringan untuk menambahkan sentuhan personal dan memastikan informasi seperti harga dan promo sudah benar.</div></div>
+    <div class="faq-item"><div class="faq-q">Berapa lama akses berlaku?</div><div class="faq-a">Selamanya. Bayar sekali, download berkali-kali, dan semua update di masa depan otomatis gratis untuk kamu.</div></div>
+    <div class="faq-item"><div class="faq-q">Bagaimana cara ordernya?</div><div class="faq-a">Klik tombol beli, lakukan pembayaran, dan link download langsung tersedia. Proses kurang dari 2 menit.</div></div>
+    <div class="faq-item"><div class="faq-q">Apakah bisa dipakai untuk lebih dari 1 bisnis?</div><div class="faq-a">Ya! Tidak ada batasan. Kamu bisa pakai prompt yang sama untuk semua bisnis yang kamu punya — tinggal ganti variabel sesuai bisnis masing-masing.</div></div>
+    <div class="faq-item"><div class="faq-q">Bagaimana kalau saya tidak puas?</div><div class="faq-a">Hubungi kami dalam 7 hari dan kami kembalikan 100% uangmu. Tidak ada pertanyaan, tidak ada proses berbelit.</div></div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section style="padding:52px 20px;background:#f9f9f9" id="order">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Jangan Jadi UMKM yang Ketinggalan</h2>
+      <p class="cta-sub">Kompetitormu mungkin sudah pakai ini. Gabung 1.847 UMKM sekarang.</p>
+      <ul class="cta-includes">
+        <li>📋 Master Library 1.000+ Prompt AI<span class="val">Rp 1.200.000</span></li>
+        <li>🎨 Visual Brief 105 Template Canva<span class="val">Rp 350.000</span></li>
+        <li>📖 E-Book Panduan PDF 9 Bab<span class="val">Rp 150.000</span></li>
+        <li>🎁 Update Gratis Selamanya<span class="val">Rp 200.000</span></li>
+      </ul>
+      <div class="cta-price">
+        <div class="old">Total Nilai: Rp 1.900.000</div>
+        <div class="new">Rp 79.000</div>
+        <div class="disc">🔥 Hemat 96% — Harga Spesial Terbatas</div>
+      </div>
+      <div class="cta-timer">⏰ Harga ini berakhir dalam: <span class="t" id="timer2">23:47:12</span></div>
+      <a href="#" class="btn-final">Beli Sekarang & Gabung 1.847 UMKM →<small>Akses langsung · Garansi 7 hari · Bayar sekali</small></a>
+      <p class="cta-footnote">🔒 Pembayaran aman · 🛡️ Garansi 7 hari uang kembali · ⚡ Download langsung</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Konten Kilat · Semua Hak Dilindungi</p>
+  <p style="margin-top:6px"><a href="#">Syarat & Ketentuan</a> · <a href="#">Kebijakan Privasi</a> · <a href="#">Hubungi Kami</a></p>
+</footer>
+
+<script>
+function startTimer(secs,els){var t=secs;setInterval(function(){var h=String(Math.floor(t/3600)).padStart(2,'0');var m=String(Math.floor((t%3600)/60)).padStart(2,'0');var s=String(t%60).padStart(2,'0');var str=h+':'+m+':'+s;els.forEach(function(e){if(e)e.textContent=str;});if(--t<0)t=secs;},1000);}
+var key='lp2_end';var end=localStorage.getItem(key);if(!end){end=Date.now()+23*3600000+47*60000;localStorage.setItem(key,end);}
+var rem=Math.max(0,Math.floor((+end-Date.now())/1000));
+startTimer(rem,[document.getElementById('timer'),document.getElementById('timer2')]);
+</script>
+</body>
+</html>
