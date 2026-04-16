@@ -136,6 +136,23 @@ footer{background:#1a1a2e;color:#666;text-align:center;padding:24px 20px;font-si
 footer a{color:#888}
 @media(max-width:500px){.vs-hero{grid-template-columns:1fr auto 1fr}}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1671485720537696');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1671485720537696&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -163,7 +180,7 @@ footer a{color:#888}
       <div class="old">Harga Normal: Rp 199.000</div>
       <div><span class="new">Rp 79.000</span><span class="save-badge">Hemat 60%</span></div>
     </div>
-    <a href="#order" class="btn">Ambil Sekarang — Harga Terbaik →<small>Satu kali bayar · Akses selamanya · Garansi 7 hari</small></a>
+    <a href="#order" class="btn" onclick="fbq('track', 'Purchase', {value: 79000, currency: 'IDR'})">Ambil Sekarang — Harga Terbaik →<small>Satu kali bayar · Akses selamanya · Garansi 7 hari</small></a>
     <div class="trust-row"><span>🔒 Pembayaran Aman</span><span>⚡ Akses Instan</span><span>🇮🇩 Bahasa Indonesia</span><span>♾️ Pakai Selamanya</span></div>
   </div>
 </section>
@@ -383,7 +400,7 @@ footer a{color:#888}
         <div class="disc">🔥 Hemat 96% — Bayar Sekali Selamanya</div>
       </div>
       <div class="cta-timer">⏰ Harga ini berakhir dalam: <span class="t" id="timer2">23:47:12</span></div>
-      <a href="https://beli.autolaris.com/cart/09abff4cf3d851652c82c84e7a868da8" class="btn-final">Hemat Rp 4 Juta — Beli Sekarang →<small>Akses langsung · Garansi 7 hari · Bayar sekali pakai selamanya</small></a>
+      <a href="https://beli.autolaris.com/cart/09abff4cf3d851652c82c84e7a868da8" class="btn-final" onclick="fbq('track', 'Purchase', {value: 79000, currency: 'IDR'})">Hemat Rp 4 Juta — Beli Sekarang →<small>Akses langsung · Garansi 7 hari · Bayar sekali pakai selamanya</small></a>
       <p class="cta-footnote">🔒 Pembayaran aman · 🛡️ Garansi 7 hari uang kembali · ⚡ Download langsung</p>
     </div>
   </div>
