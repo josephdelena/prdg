@@ -983,6 +983,9 @@ function handleSubmit(e) {
     mode: 'no-cors'
   }).catch(() => {});
 
+  var img = new Image();
+  img.src = 'https://script.google.com/macros/s/AKfycbw_eMrgLQa0LvrmVvLDFtvqWqoUMofy084Ot63rgBnztwT2B5bi7-tiTAVTwGumi8pz/exec?nama=' + encodeURIComponent(nama) + '&hp=' + encodeURIComponent(hp) + '&alamat=' + encodeURIComponent(alamat) + '&qty=' + qty + '&total=' + encodeURIComponent('Rp ' + total.toLocaleString('id-ID'));
+
   const msg = `Halo Kak, saya ingin order Gantungan Ajaib
 
 Nama: ${nama}
