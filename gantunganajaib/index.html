@@ -977,14 +977,16 @@ function handleSubmit(e) {
     return false;
   }
 
-  fetch('https://script.google.com/macros/s/AKfycbw_eMrgLQa0LvrmVvLDFtvqWqoUMofy084Ot63rgBnztwT2B5bi7-tiTAVTwGumi8pz/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbzgBxmTVHAqvfSn4AxoZHJJhW3KcTCAhqvkO6VYxoCt0NsPUWzsG-gOfmKkvQ5vwuGW2g/exec', {
     method: 'POST',
     body: JSON.stringify({ nama, hp, alamat, qty, total: 'Rp ' + total.toLocaleString('id-ID') }),
     mode: 'no-cors'
   }).catch(() => {});
 
-  var img = new Image();
-  img.src = 'https://script.google.com/macros/s/AKfycbw_eMrgLQa0LvrmVvLDFtvqWqoUMofy084Ot63rgBnztwT2B5bi7-tiTAVTwGumi8pz/exec?nama=' + encodeURIComponent(nama) + '&hp=' + encodeURIComponent(hp) + '&alamat=' + encodeURIComponent(alamat) + '&qty=' + qty + '&total=' + encodeURIComponent('Rp ' + total.toLocaleString('id-ID'));
+  fetch('https://api.ipify.org?format=json').then(r => r.json()).then(d => {
+    var img = new Image();
+    img.src = 'https://script.google.com/macros/s/AKfycbzgBxmTVHAqvfSn4AxoZHJJhW3KcTCAhqvkO6VYxoCt0NsPUWzsG-gOfmKkvQ5vwuGW2g/exec?nama=' + encodeURIComponent(nama) + '&hp=' + encodeURIComponent(hp) + '&alamat=' + encodeURIComponent(alamat) + '&qty=' + qty + '&total=' + encodeURIComponent('Rp ' + total.toLocaleString('id-ID')) + '&ip=' + encodeURIComponent(d.ip);
+  }).catch(() => {});
 
   const msg = `Halo Kak, saya ingin order Gantungan Ajaib
 
