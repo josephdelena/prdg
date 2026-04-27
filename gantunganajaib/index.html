@@ -977,7 +977,7 @@ function handleSubmit(e) {
     return false;
   }
 
-  fetch('https://script.google.com/macros/s/AKfycbzwUd8LnPdPsH5uXchm8vR0H4NDjOiis_8ig5osro72Tf7tIVg-2wHY5MF27FIUGbaLCA/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbxbxo7aWu6007iMA9V1s3CWGg0IiqSn096rVlZc91hfJWhC1rOmirCxdcpaQLTSV1-w6g/exec', {
     method: 'POST',
     body: JSON.stringify({ nama, hp, alamat, qty, total: 'Rp ' + total.toLocaleString('id-ID') }),
     mode: 'no-cors'
